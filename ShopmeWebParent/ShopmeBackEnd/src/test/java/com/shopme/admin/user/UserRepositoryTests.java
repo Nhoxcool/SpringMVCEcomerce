@@ -2,7 +2,6 @@ package com.shopme.admin.user;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,6 @@ public class UserRepositoryTests {
 		userTuTran.addRole(roleAdmin);
 		
 		User saveUser = repo.save(userTuTran);
-		// Kiểm tra ID lớn hơn 0 là hợp lệ
 		assertThat(saveUser.getId()).isGreaterThan(0);
 	}
 	
@@ -84,7 +82,7 @@ public class UserRepositoryTests {
 	
 	@Test
 	public void testDeleteUser() {
-		Integer userId = 2;
+		Integer userId = 1;
 		repo.deleteById(userId);
 	}
 }
