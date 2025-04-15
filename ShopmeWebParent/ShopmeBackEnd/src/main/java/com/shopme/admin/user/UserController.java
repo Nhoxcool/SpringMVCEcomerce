@@ -19,8 +19,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shopme.admin.FileUploadUtil;
 import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
-
-import jakarta.persistence.Transient;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
