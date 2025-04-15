@@ -21,6 +21,7 @@ import com.shopme.common.entity.Role;
 import com.shopme.common.entity.User;
 
 import jakarta.persistence.Transient;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class UserController {
@@ -160,6 +161,16 @@ public class UserController {
 		
 		return "redirect:/users";
 		
+	}
+	
+	//Export to CSV
+	@GetMapping("/users/export/csv")
+	public void exportToCSV(HttpServletResponse response) throws IOException {
+		List<User> listUsers = service.listAll();
+		
+		UserCsvExporter exporter = new UserCsvExporter();
+		
+		exporter.export(listUsers, response);
 	}
 	
 }
